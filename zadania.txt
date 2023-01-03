@@ -1,0 +1,17 @@
+Zapytanie 1: wybierające daty i godziny wszystkich seansów (bez powtórzeń)
+
+Zapytanie 2: wybierające wyłącznie numery rzędów i miejsc zarezerwowanych na seans w dniu 2022-08-09 o godzinie 18:00
+
+Zapytanie 3: zliczające ilość miejsc zarezerwowanych na seans w dniu 2022-08-09 o godzinie 18:00
+
+Zapytanie 4: wybierające wyłącznie numery rzędów i miejsc oraz datę i godzinę rezerwacji wykonanych przez kasjera o nazwisku i imieniu Bednarski Jan. Należy posłużyć się relacją.
+
+////////////////////////////////////////////
+
+Zad 1: SELECT Data, Godzina FROM rezerwacje GROUP BY Data, Godzina
+
+Zad 2: SELECT Rzad, Miejsce FROM rezerwacje WHERE Data = "2022-08-09" and Miejsce and Rzad and Godzina = "18:00"    
+ 
+Zad 3: SELECT COUNT(*), Data, Godzina FROM rezerwacje WHERE Data = "2022-08-09" and Godzina = "18:00" 
+
+Zad 4: SELECT Miejsce, Rzad, Data, Godzina FROM kasjerzy, rezerwacje WHERE kasjerzy.Id = rezerwacje.Id_kasjera and kasjerzy.Nazwisko = "Bednarski" and kasjerzy.Imie = "Jan" 
